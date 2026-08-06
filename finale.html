@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forever Begins ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:radial-gradient(circle,#2d003d,#090014,#000);
+color:white;
+font-family:Poppins,sans-serif;
+}
+
+canvas{
+position:fixed;
+inset:0;
+z-index:0;
+}
+
+.container{
+position:relative;
+z-index:2;
+text-align:center;
+max-width:800px;
+padding:30px;
+}
+
+.heart{
+
+font-size:140px;
+
+animation:beat 1.2s infinite;
+
+filter:drop-shadow(0 0 30px hotpink);
+
+}
+
+h1{
+
+font-size:55px;
+
+margin:10px 0;
+
+}
+
+p{
+
+font-size:22px;
+
+line-height:1.8;
+
+}
+
+.names{
+
+font-size:34px;
+
+color:#ffd6e8;
+
+margin:30px 0;
+
+font-weight:bold;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:20px;
+
+cursor:pointer;
+
+background:#ff2d75;
+
+color:white;
+
+box-shadow:0 0 35px #ff2d75;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+@keyframes beat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.18);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="fireworks"></canvas>
+
+<div class="container">
+
+<div class="heart">
+❤️
+</div>
+
+<h1>The Beginning of Something Beautiful</h1>
+
+<div class="names">
+
+Al-Ameen Umar
+
+❤️
+
+Fayrouz A. Mamman
+
+</div>
+
+<p>
+
+Thank you for taking this little journey with me.
+
+Every page you opened carried a piece of my heart.
+
+Whether our story becomes a chapter...
+
+or an entire book...
+
+I'm grateful our paths crossed.
+
+May every smile we share become a beautiful memory.
+
+🌹
+
+</p>
+
+<button onclick="finish()">
+
+One Last Touch ❤️
+
+</button>
+
+</div>
+
+<script>
+
+const canvas=document.getElementById("fireworks");
+
+const ctx=canvas.getContext("2d");
+
+canvas.width=innerWidth;
+
+canvas.height=innerHeight;
+
+const particles=[];
+
+function boom(){
+
+for(let i=0;i<150;i++){
+
+particles.push({
+
+x:innerWidth/2,
+
+y:innerHeight/2,
+
+vx:(Math.random()-0.5)*12,
+
+vy:(Math.random()-0.5)*12,
+
+life:100
+
+});
+
+}
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,index)=>{
+
+p.x+=p.vx;
+
+p.y+=p.vy;
+
+p.life--;
+
+ctx.beginPath();
+
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
+ctx.fillStyle=`hsl(${Math.random()*360},100%,70%)`;
+
+ctx.fill();
+
+if(p.life<=0){
+
+particles.splice(index,1);
+
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+setInterval(boom,2500);
+
+boom();
+
+function finish(){
+
+document.body.innerHTML=`
+
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;padding:40px;background:black;color:white;font-family:Poppins,sans-serif;">
+
+<div>
+
+<h1 style="font-size:60px;">❤️</h1>
+
+<h2>Thank You, Fayrouz</h2>
+
+<p style="font-size:24px;line-height:1.8;max-width:700px;">
+
+Every love story starts with a single moment.
+
+Thank you for sharing this one with me.
+
+No matter what tomorrow brings,
+
+today I wanted you to know that you are appreciated.
+
+🌹
+
+With sincerity,
+
+<b>Al-Ameen Umar</b>
+
+</p>
+
+<h2>
+
+✨ The End...
