@@ -604,105 +604,63 @@ behavior:"smooth"
 
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
-const buttons = document.getElementById("buttons");
 const answer = document.getElementById("answer");
+const buttons = document.getElementById("buttons");
 
-let yesScale = 1;
-
-const messages = [
-
-"😅 Are you sure?",
-
-"🥺 Please don't do that.",
-
-"❤️ Give me a chance.",
-
-"🌹 Think again...", 
-
-"😂 Nice try!",
-
-"💖 You can't catch me.",
-
-"😊 The YES button looks better.",
-
-"💕 I believe you'll choose YES."
-
+const noReplies = [
+    "🥺 Really?",
+    "😢 Are you sure?",
+    "🙈 Try again...",
+    "😂 Nope!",
+    "❤️ The answer is YES!",
+    "😜 Nice try!",
+    "💖 You can't escape love!",
+    "🌹 Think again..."
 ];
 
-buttons.addEventListener("mousemove",(e)=>{
+let yesSize = 1;
 
-const rect = buttons.getBoundingClientRect();
+buttons.addEventListener("mousemove", (e) => {
 
-const btnRect = noBtn.getBoundingClientRect();
+    const rect = buttons.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
 
-const dx = e.clientX-(btnRect.left+btnRect.width/2);
+    const dx = e.clientX - (btnRect.left + btnRect.width / 2);
+    const dy = e.clientY - (btnRect.top + btnRect.height / 2);
 
-const dy = e.clientY-(btnRect.top+btnRect.height/2);
+    if (Math.sqrt(dx * dx + dy * dy) < 60) {
 
-const distance = Math.sqrt(dx*dx+dy*dy);
+        noBtn.style.left =
+            Math.random() * (rect.width - noBtn.offsetWidth) + "px";
 
-if(distance<60){
+        noBtn.style.top =
+            Math.random() * (rect.height - noBtn.offsetHeight) + "px";
 
-const maxX=rect.width-noBtn.offsetWidth;
+        yesSize += 0.08;
 
-const maxY=rect.height-noBtn.offsetHeight;
+        yesBtn.style.transform = `scale(${yesSize})`;
 
-const x=Math.random()*maxX;
-
-const y=Math.random()*maxY;
-
-noBtn.style.left=x+"px";
-noBtn.style.top=y+"px";
-
-yesScale+=0.1;
-
-yesBtn.style.transform=`scale(${yesScale})`;
-
-answer.innerHTML=messages[
-Math.floor(Math.random()*messages.length)
-];
-
-}
+        answer.innerHTML =
+            noReplies[Math.floor(Math.random() * noReplies.length)];
+    }
 
 });
 
-noBtn.addEventListener("click",(e)=>{
+yesBtn.onclick = () => {
 
-e.preventDefault();
+    answer.innerHTML = `
+    <h1>🥰 Awwww ❤️</h1>
 
-});
+    <p>
+    You just made me the happiest person today. 🌹<br><br>
 
-yesBtn.onclick=()=>{
+    Thank you for saying YES, Fayrouz. ❤️<br>
 
-document.body.style.background="#ff4f91";
+    I hope this is just the beginning of our beautiful story.
+    </p>
+    `;
 
-answer.innerHTML=`
-
-<h1>❤️ YAAAY!! ❤️</h1>
-
-<p>
-
-Thank you Fayrouz.
-
-You just made my day.
-
-I hope this is only the beginning of something beautiful.
-
-🌹
-
-Love,
-
-Al-Ameen Umar
-
-</p>
-
-`;
-
-for(let i=0;i<150;i++){
-
-createHeart();
-
-}
+    heartConfetti();
 
 };
 
