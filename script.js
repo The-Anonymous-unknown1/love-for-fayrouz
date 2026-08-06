@@ -181,3 +181,192 @@ This website is my way of saying thank you for taking the time to explore someth
 </div>
 
 `;
+/* =======================================
+   LOVE LETTER
+======================================= */
+
+document.getElementById("letter").innerHTML = `
+
+<div class="card">
+
+<h2>💌 A Letter For You</h2>
+
+<div id="envelope" style="font-size:120px;cursor:pointer;">
+📩
+</div>
+
+<div id="letterBox" style="display:none;">
+
+<p id="letterText"></p>
+
+<br>
+
+<button id="galleryBtn">
+Our Memories ❤️
+</button>
+
+</div>
+
+</div>
+
+`;
+
+const letterMessage = `Dear Fayrouz,
+
+Thank you for opening this little letter.
+
+I didn't want to give you something ordinary.
+
+I wanted to create something that would always be here whenever you wanted to revisit it.
+
+Every line on this website was written with sincerity.
+
+Whether we're sharing conversations, smiles, or quiet moments, I appreciate the chance to know you.
+
+Thank you for being part of this journey.
+
+With respect and admiration,
+
+❤️ Al-Ameen Umar`;
+
+document.getElementById("envelope").onclick = function(){
+
+this.style.display = "none";
+
+document.getElementById("letterBox").style.display = "block";
+
+const target = document.getElementById("letterText");
+
+let x = 0;
+
+function write(){
+
+if(x < letterMessage.length){
+
+if(letterMessage[x] == "\n"){
+
+target.innerHTML += "<br>";
+
+}else{
+
+target.innerHTML += letterMessage[x];
+
+}
+
+x++;
+
+setTimeout(write,30);
+
+}
+
+}
+
+write();
+
+};
+
+document.getElementById("galleryBtn").onclick = function(){
+
+document.getElementById("gallery").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+};
+
+
+/* =======================================
+   GALLERY
+======================================= */
+
+document.getElementById("gallery").innerHTML = `
+
+<div class="card">
+
+<h2>📸 Beautiful Moments</h2>
+
+<p>
+Every memory begins with a single moment.
+</p>
+
+<div class="gallery">
+
+<img src="assets/images/gallery1.jpg">
+
+<img src="assets/images/gallery2.jpg">
+
+<img src="assets/images/gallery3.jpg">
+
+<img src="assets/images/gallery4.jpg">
+
+</div>
+
+<br>
+
+<button id="reasonBtn">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById("reasonBtn").onclick = function(){
+
+document.getElementById("reasons").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+};
+
+
+/* =======================================
+   REASONS
+======================================= */
+
+document.getElementById("reasons").innerHTML = `
+
+<div class="card">
+
+<h2>💖 Things I Admire About You</h2>
+
+<p>
+
+🌹 Your smile.<br><br>
+
+🌹 Your kindness.<br><br>
+
+🌹 Your strength.<br><br>
+
+🌹 The way you make ordinary moments feel special.<br><br>
+
+🌹 The person you're becoming every day.
+
+</p>
+
+<br>
+
+<button id="surpriseBtn">
+
+One More Surprise 🎁
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById("surpriseBtn").onclick = function(){
+
+document.getElementById("surprise").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+};
