@@ -597,59 +597,111 @@ behavior:"smooth"
 });
 
 };
-// ======================
-// YES / NO GAME
-// ======================
 
-const noBtn = document.getElementById("noBtn");
+// ======================================
+// YES / NO LOVE GAME
+// ======================================
+
 const yesBtn = document.getElementById("yesBtn");
-const box = document.getElementById("buttons");
+const noBtn = document.getElementById("noBtn");
+const buttons = document.getElementById("buttons");
 const answer = document.getElementById("answer");
 
-const SAFE_DISTANCE = 60;
+let yesScale = 1;
 
-box.addEventListener("mousemove", (e)=>{
+const messages = [
 
-    const rect = box.getBoundingClientRect();
+"😅 Are you sure?",
 
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+"🥺 Please don't do that.",
 
-    const btnX = noBtn.offsetLeft + noBtn.offsetWidth/2;
-    const btnY = noBtn.offsetTop + noBtn.offsetHeight/2;
+"❤️ Give me a chance.",
 
-    const dx = mouseX - btnX;
-    const dy = mouseY - btnY;
+"🌹 Think again...", 
 
-    const distance = Math.sqrt(dx*dx + dy*dy);
+"😂 Nice try!",
 
-    if(distance < SAFE_DISTANCE){
+"💖 You can't catch me.",
 
-        const maxX = rect.width - noBtn.offsetWidth;
-        const maxY = rect.height - noBtn.offsetHeight;
+"😊 The YES button looks better.",
 
-        let newX,newY;
+"💕 I believe you'll choose YES."
 
-        do{
-            newX = Math.random()*maxX;
-            newY = Math.random()*maxY;
+];
 
-        }while(
-            Math.sqrt(
-                Math.pow(mouseX-newX,2)+
-                Math.pow(mouseY-newY,2)
-            ) < SAFE_DISTANCE
-        );
+buttons.addEventListener("mousemove",(e)=>{
 
-        noBtn.style.left = newX+"px";
-        noBtn.style.top = newY+"px";
-    }
+const rect = buttons.getBoundingClientRect();
+
+const btnRect = noBtn.getBoundingClientRect();
+
+const dx = e.clientX-(btnRect.left+btnRect.width/2);
+
+const dy = e.clientY-(btnRect.top+btnRect.height/2);
+
+const distance = Math.sqrt(dx*dx+dy*dy);
+
+if(distance<60){
+
+const maxX=rect.width-noBtn.offsetWidth;
+
+const maxY=rect.height-noBtn.offsetHeight;
+
+const x=Math.random()*maxX;
+
+const y=Math.random()*maxY;
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+yesScale+=0.1;
+
+yesBtn.style.transform=`scale(${yesScale})`;
+
+answer.innerHTML=messages[
+Math.floor(Math.random()*messages.length)
+];
+
+}
 
 });
 
-yesBtn.onclick = ()=>{
+noBtn.addEventListener("click",(e)=>{
 
-    answer.innerHTML =
-    "❤️ YAY!! You just made Al-Ameen the happiest person alive! ❤️🎉";
+e.preventDefault();
+
+});
+
+yesBtn.onclick=()=>{
+
+document.body.style.background="#ff4f91";
+
+answer.innerHTML=`
+
+<h1>❤️ YAAAY!! ❤️</h1>
+
+<p>
+
+Thank you Fayrouz.
+
+You just made my day.
+
+I hope this is only the beginning of something beautiful.
+
+🌹
+
+Love,
+
+Al-Ameen Umar
+
+</p>
+
+`;
+
+for(let i=0;i<150;i++){
+
+createHeart();
+
+}
 
 };
