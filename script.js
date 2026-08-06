@@ -1,74 +1,148 @@
-// Romantic typing effect
+// ===============================
+// FOR FAYROUZ ❤️
+// Premium Love Website Script
+// ===============================
 
-const text =
-"Hello Fayrouz A. Mamman ❤️\n\nSomeone has something very special to tell you...\n\nTake my hand and let's begin this little journey together.";
+// ---------- Typewriter ----------
+
+const message =
+"Hello Fayrouz .A. Mamman ❤️\n\nThis little website was made especially for you.\nEvery click reveals another piece of my heart.\n\n— Al-Ameen Umar";
 
 const typing = document.getElementById("typing");
 
-let i = 0;
+let index = 0;
 
-function typeWriter() {
-    if (i < text.length) {
-        if (text.charAt(i) === "\n") {
+function typeWriter(){
+
+    if(index < message.length){
+
+        if(message[index] === "\n"){
             typing.innerHTML += "<br>";
-        } else {
-            typing.innerHTML += text.charAt(i);
+        }else{
+            typing.innerHTML += message[index];
         }
-        i++;
-        setTimeout(typeWriter, 60);
+
+        index++;
+
+        setTimeout(typeWriter,45);
+
     }
+
 }
 
 typeWriter();
 
 
-// Floating Hearts
-function createHeart() {
+// ---------- Floating Hearts ----------
+
+const hearts = document.getElementById("hearts");
+
+function createHeart(){
 
     const heart = document.createElement("div");
 
-    heart.innerHTML = "❤️";
+    heart.innerHTML = "❤";
 
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.top = "-50px";
-    heart.style.fontSize = (20 + Math.random() * 20) + "px";
-    heart.style.pointerEvents = "none";
-    heart.style.zIndex = "1";
-    heart.style.opacity = "0.8";
+    heart.style.position = "absolute";
+    heart.style.left = Math.random()*100+"vw";
+    heart.style.top = "100vh";
 
-    document.body.appendChild(heart);
+    heart.style.fontSize = (15+Math.random()*25)+"px";
 
-    let y = -50;
+    heart.style.opacity = Math.random();
 
-    const fall = setInterval(() => {
+    heart.style.color = "#ff6fa8";
 
-        y += 3;
+    heart.style.transition = "transform 8s linear, opacity 8s linear";
 
-        heart.style.top = y + "px";
+    hearts.appendChild(heart);
 
-        if (y > window.innerHeight) {
-            clearInterval(fall);
-            heart.remove();
-        }
+    requestAnimationFrame(()=>{
 
-    }, 20);
+        heart.style.transform =
+        `translateY(-120vh) rotate(${Math.random()*360}deg)`;
+
+        heart.style.opacity = "0";
+
+    });
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },8000);
 
 }
 
-setInterval(createHeart, 500);
+setInterval(createHeart,300);
 
 
-// Button Click
-document.getElementById("startButton").addEventListener("click", () => {
+// ---------- Music ----------
 
-    document.body.style.transition = "1s";
-    document.body.style.opacity = "0";
+const music = document.getElementById("music");
 
-    setTimeout(() => {
+const musicBtn = document.getElementById("musicBtn");
 
-        window.location.href = "chapter1.html";
+let playing = false;
 
-    }, 1000);
+musicBtn.onclick = ()=>{
+
+    if(playing){
+
+        music.pause();
+
+        musicBtn.innerHTML="🎵";
+
+    }else{
+
+        music.play();
+
+        musicBtn.innerHTML="⏸";
+
+    }
+
+    playing=!playing;
+
+};
+
+
+// ---------- Begin Button ----------
+
+document.getElementById("begin").onclick=()=>{
+
+document.getElementById("story").scrollIntoView({
+
+behavior:"smooth"
 
 });
+
+};
+
+
+// ---------- Story Section ----------
+
+document.getElementById("story").innerHTML = `
+
+<div style="max-width:900px;margin:auto;text-align:center;">
+
+<h2 style="font-size:55px;margin-bottom:30px;color:#ffd3e6;">
+🌹 Our Story Begins
+</h2>
+
+<p style="font-size:22px;line-height:2;">
+
+Every beautiful story starts with one unexpected moment.
+
+Meeting you reminded me that even ordinary days can become special because of someone.
+
+This isn't a promise of perfection.
+
+It's simply a sincere wish to keep learning about you, laughing with you, and creating meaningful memories together.
+
+❤️
+
+</p>
+
+</div>
+
+`;
