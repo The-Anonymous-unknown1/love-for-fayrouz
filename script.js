@@ -537,3 +537,39 @@ loader.style.display="none";
 },3000);
 
 });
+
+// ==============================
+// LIGHTBOX
+// ==============================
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+
+img.onclick=()=>{
+
+lightbox.style.display="flex";
+
+lightboxImg.src=img.src;
+
+};
+
+});
+
+closeBtn.onclick=()=>{
+
+lightbox.style.display="none";
+
+};
+
+lightbox.onclick=(e)=>{
+
+if(e.target===lightbox){
+
+lightbox.style.display="none";
+
+}
+
+};
