@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    overflow-y:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:30px;
+}
+
+.container{
+    max-width:800px;
+    width:100%;
+    text-align:center;
+}
+
+.envelope{
+    width:220px;
+    height:140px;
+    margin:40px auto;
+    background:#ff4d88;
+    border-radius:12px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:60px;
+    box-shadow:0 0 30px rgba(255,77,136,.5);
+    transition:.4s;
+}
+
+.envelope:hover{
+    transform:scale(1.08);
+}
+
+.letter{
+    display:none;
+    background:rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:20px;
+    line-height:1.9;
+    font-size:1.15rem;
+    text-align:left;
+}
+
+.next{
+    display:none;
+    margin-top:30px;
+    padding:15px 35px;
+    background:#ff2d75;
+    color:#fff;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="container">
+
+<h1>💌 A Letter For Fayrouz 💌</h1>
+
+<p>Tap the envelope to open my heart.</p>
+
+<div class="envelope" onclick="openLetter()">
+💌
+</div>
+
+<div class="letter" id="letter">
+
+<p id="text"></p>
+
+</div>
+
+<button class="next" id="nextBtn" onclick="location.href='gallery.html'">
+Our Dream ❤️
+</button>
+
+</div>
+
+<script>
+
+const message = `Dear Fayrouz,
+
+I don't know what tomorrow will bring, but I know that meeting you has made today more beautiful.
+
+Thank you for being yourself.
+
+You don't have to be perfect to be amazing.
+
+I admire your heart, your smile, and the person you are becoming.
+
+kyawun halayenki ya sa ba na iya samun natsuwa da kwanciyan hankali in ban ji ki a online ba.
+
+I'm not asking for a fairy tale.
+
+I'm simply hoping that, if life allows, we can keep getting to know each other and create wonderful memories together.
+
+No matter what happens, I'll always be grateful that our paths crossed.
+
+With sincerity,
+
+❤️ Al-Ameen Umar ("ANSIT") ❤️`;
+
+function openLetter(){
+
+document.querySelector(".envelope").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+let i=0;
+
+const target=document.getElementById("text");
+
+const timer=setInterval(()=>{
+
+target.innerHTML+=message.charAt(i);
+
+i++;
+
+if(i>=message.length){
+
+clearInterval(timer);
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+}
+
+},35);
+
+}
+
+</script>
+
+</body>
+</html>
