@@ -131,8 +131,6 @@ setInterval(createHeart,300);
 
 // ---------- Music ----------
 
-const music=document.getElementById("music");
-
 const musicBtn=document.getElementById("musicBtn");
 
 let playing=false;
