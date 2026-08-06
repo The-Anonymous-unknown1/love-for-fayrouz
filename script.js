@@ -573,3 +573,27 @@ lightbox.style.display="none";
 }
 
 };
+
+// =========================
+// SURPRISE
+// =========================
+
+const surpriseBtn=document.getElementById("surpriseBtn");
+
+const surprise=document.getElementById("surpriseMessage");
+
+surpriseBtn.onclick=()=>{
+
+surprise.style.display="block";
+
+surpriseBtn.style.display="none";
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+};
