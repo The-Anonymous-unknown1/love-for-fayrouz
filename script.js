@@ -370,3 +370,148 @@ behavior:"smooth"
 });
 
 };
+/* =======================================
+   SURPRISE
+======================================= */
+
+document.getElementById("surprise").innerHTML = `
+
+<div class="card">
+
+<h2>🎁 One Last Surprise</h2>
+
+<div id="giftBox" style="font-size:120px;cursor:pointer;">
+🎁
+</div>
+
+<div id="giftMessage" style="display:none;">
+
+<h2>❤️ Dear Fayrouz ❤️</h2>
+
+<p>
+
+Thank you for visiting this little world I created.
+
+It isn't about expensive gifts.
+
+It's about showing that someone is worth time, effort, and creativity.
+
+No matter what the future brings, I hope this website reminds you that you are appreciated.
+
+🌹
+
+</p>
+
+<br>
+
+<button id="finishBtn">
+
+The Final Chapter ✨
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("giftBox").onclick = function(){
+
+this.style.display = "none";
+
+document.getElementById("giftMessage").style.display = "block";
+
+};
+
+document.getElementById("finishBtn").onclick = function(){
+
+document.getElementById("ending").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+};
+
+
+/* =======================================
+   ENDING
+======================================= */
+
+document.getElementById("ending").innerHTML = `
+
+<div class="card">
+
+<div id="heart" style="font-size:120px;animation:beat 1s infinite;">
+
+❤️
+
+</div>
+
+<h1>Thank You</h1>
+
+<h2>
+
+Al-Ameen Umar ❤️ Fayrouz A. Mamman
+
+</h2>
+
+<p>
+
+Every story starts with one moment.
+
+Thank you for sharing this one with me.
+
+I hope this website made you smile.
+
+✨ The End... or maybe just the beginning. ✨
+
+</p>
+
+<br>
+
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+Back To The Beginning 🌹
+
+</button>
+
+</div>
+
+`;
+
+
+/* =======================================
+   SIMPLE SPARKLES
+======================================= */
+
+function sparkle(){
+
+const star=document.createElement("div");
+
+star.innerHTML="✨";
+
+star.style.position="fixed";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.fontSize="18px";
+
+star.style.opacity=".8";
+
+star.style.pointerEvents="none";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2000);
+
+}
+
+setInterval(sparkle,600);
