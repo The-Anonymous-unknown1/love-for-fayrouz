@@ -263,3 +263,67 @@ behavior:"smooth"
 });
 
 };
+
+// ===============================
+// HERO SECTION
+// ===============================
+
+document.getElementById("hero").innerHTML = `
+
+<div class="hero-container">
+
+    <div class="glass-card">
+
+        <h3>Made With ❤️ Especially For</h3>
+
+        <h1>
+            Fayrouz<br>
+            A. Mamman
+        </h1>
+
+        <p id="heroTyping"></p>
+
+        <button id="beginStory">
+            Begin Our Story ❤️
+        </button>
+
+    </div>
+
+</div>
+
+`;
+
+const heroMessage =
+"Hello Fayrouz ❤️\n\nThis isn't just a website...\nIt's a small journey created especially for you.\n\nEvery click reveals another piece of my heart.\n\n— Al-Ameen Umar";
+
+const heroTyping = document.getElementById("heroTyping");
+
+let heroIndex = 0;
+
+function typeHero(){
+
+    if(heroIndex < heroMessage.length){
+
+        if(heroMessage[heroIndex] === "\n"){
+            heroTyping.innerHTML += "<br>";
+        }else{
+            heroTyping.innerHTML += heroMessage[heroIndex];
+        }
+
+        heroIndex++;
+
+        setTimeout(typeHero,40);
+
+    }
+
+}
+
+typeHero();
+
+document.getElementById("beginStory").onclick = () => {
+
+    document.getElementById("story").scrollIntoView({
+        behavior:"smooth"
+    });
+
+};
