@@ -1,14 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Fayrouz ❤️</title>
+<title>❤️ For Fayrouz ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="assets/images/favicon.png">
+
 </head>
+
+<body>
+
+<!-- Loading Screen -->
+
+<div id="loader">
+
+<div class="loader-heart">❤️</div>
+
+<h1>Loading Your Surprise...</h1>
+
+<p>Made with ❤️ by Al-Ameen Umar</p>
+
+</div>
+
+<!-- Background -->
+
+<div id="stars"></div>
+
+<div id="particles"></div>
+
+<div id="hearts"></div>
+
+<!-- Music -->
+
+<!-- Background Music -->
+
+<audio id="music" loop>
+
+    <source src="assets/music/BALARABA_SONG_By_FATI_NIJAR_FT_NAZIRU_SARKIN_WAKA_LATEST_HAUSA_SONG_2026(360p).mp3" type="audio/mpeg">
+
+    Your browser does not support the audio element.
+
+</audio>
+
+<button id="musicBtn" title="Play / Pause Music">
+    🎵
+</button>
+
+<!-- Hero -->
+
+<section id="hero"></section>
+
+<!-- Story -->
+
+<section id="story"></section>
+
+<!-- Love Letter -->
+
+<section id="letter"></section>
+
+<!-- Gallery -->
+
+<section id="gallery">
+
+<h2 class="gallery-title">❤️ Our Love Gallery ❤️</h2>
+
+<p class="gallery-subtitle">
+
+Every picture tells another chapter of my heart.
+
+</p>
+
+<div class="gallery">
+
+<div class="card">
+
+<img src="assets/images/Love1.jpg">
+
+<div class="overlay">
+
+🌹 A love that grows every day.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love2.jpg">
+
+<div class="overlay">
+
+🌙 Every night reminds me of you.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love3.jpg">
+
+<div class="overlay">
+
+💖 Small moments, lasting memories.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love4.png">
+
+<div class="overlay">
+
+✨ Every journey starts with one hello.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love5.jpg">
+
+<div class="overlay">
+
+🌸 Every smile of yours brightens my world.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love6.jpg">
+
+<div class="overlay">
+
+💞 Together every moment becomes special.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love7.jpg">
+
+<div class="overlay">
+
+🌹 You are my favorite chapter.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love8.jpg">
+
+<div class="overlay">
+
+❤️ The best stories are written with the heart.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love9.jpg">
+
+<div class="overlay">
+
+💝 Every heartbeat whispers your name.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/Love10.jpg">
+
+<div class="overlay">
+
+💍 Maybe this is only the beginning of our story.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Surprise -->
+
+<section id="surprise"></section>
+
+<!-- Yes / No -->
+
+<section id="question">
+
+<h1>❤️ One Last Question ❤️</h1>
+
+<p>
+
+Will you continue this beautiful journey with me?
+
+</p>
+
+<div id="buttons">
+
+<button id="yesBtn">
+
+YES ❤️
+
+</button>
+
+<button id="noBtn">
+
+NO 😅
+
+</button>
+
+</div>
+
+<p id="answer"></p>
+
+</section>
+
+<!-- Ending -->
+
+<section id="ending"></section>
+
+<!-- Lightbox -->
 
 <div id="lightbox">
 
@@ -18,113 +258,19 @@
 
 </div>
 
-<body>
-
-<header class="hero">
-
-<h1>❤️ For Fayrouz ❤️</h1>
-
-<p>Every picture tells a little piece of my heart.</p>
-
-</header>
-
-<section id="gallery">
-
-<h2>📸 Our Love Gallery</h2>
-
-<div class="gallery">
-
-<img src="assets/images/love1.jpg" alt="Love1">
-
-<img src="assets/images/love2.jpg" alt="Love2">
-
-<img src="assets/images/love3.jpg" alt="Love3">
-
-<img src="assets/images/love4.jpg" alt="Love4">
-
-<img src="assets/images/love5.jpg" alt="Love5">
-
-<img src="assets/images/love6.jpg" alt="Love6">
-
-<img src="assets/images/love7.png" alt="Love7">
-
-<img src="assets/images/love8.png" alt="Love8">
-
-<img src="assets/images/love9.png" alt="Love9">
-
-<img src="assets/images/love10.png" alt="Love10">
-
-</div>
-<section id="surprise">
-
-<h1>🎁 One Last Surprise 🎁</h1>
-
-<p>
-Fayrouz...
-Before you leave this little website,
-there's one final surprise waiting for you.
-</p>
-
-<button id="surpriseBtn">
-💖 Open My Heart
-</button>
-
-<div id="surpriseMessage">
-
-<h2>❤️ Dear Fayrouz ❤️</h2>
-
-<p>
-
-Sometimes words aren't enough.
-
-Sometimes a smile says everything.
-
-Sometimes a single person changes the way another person sees the world.
-
-Meeting you has been one of those moments.
-
-Thank you for being yourself.
-
-Thank you for your kindness.
-
-Thank you for existing.
-
-No matter where life takes us...
-
-I hope happiness always finds you.
-
-❤️
-
-— Al-Ameen Umar
-
-</p>
-
-</div>
-
-</section>
-
-</section>
-<section id="question">
-
-<h1>One Question ❤️</h1>
-
-<p>Will you let me continue making you smile? 😊</p>
-
-<div id="buttons">
-
-<button id="yesBtn">YES ❤️</button>
-
-<button id="noBtn">NO 😅</button>
-
-</div>
-
-<p id="answer"></p>
-
-</section>
-
 <footer>
 
-<p>Made with ❤️ by Al-Ameen Umar for Fayrouz A. Mamman</p>
+<p>
+
+Made with ❤️ by
+
+<b>Al-Ameen Umar</b>
+
+for
+
+<b>Fayrouz A. Mamman</b>
+
+</p>
 
 </footer>
 
