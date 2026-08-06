@@ -705,3 +705,54 @@ createHeart();
 }
 
 };
+
+/* =======================================
+   START EXPERIENCE
+======================================= */
+
+const loader = document.getElementById("loader");
+const startBtn = document.getElementById("startExperience");
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+startBtn.onclick = () => {
+
+    music.play().catch(() => {
+        console.log("Music playback was blocked until user interaction.");
+    });
+
+    playing = true;
+
+    musicBtn.innerHTML = "⏸️";
+
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+
+        loader.style.display = "none";
+
+    },1000);
+
+};
+
+musicBtn.onclick = () => {
+
+    if(playing){
+
+        music.pause();
+
+        musicBtn.innerHTML="🎵";
+
+    }else{
+
+        music.play();
+
+        musicBtn.innerHTML="⏸️";
+
+    }
+
+    playing=!playing;
+
+};
