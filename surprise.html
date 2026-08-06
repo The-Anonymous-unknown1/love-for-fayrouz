@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One More Surprise ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+}
+
+.gift{
+    font-size:120px;
+    cursor:pointer;
+    transition:0.4s;
+    animation:bounce 2s infinite;
+}
+
+.gift:hover{
+    transform:scale(1.1);
+}
+
+.hidden{
+    display:none;
+    margin-top:30px;
+    background:rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:20px;
+}
+
+.next{
+    display:none;
+    margin-top:25px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff2d75;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.sparkle{
+    position:fixed;
+    font-size:24px;
+    pointer-events:none;
+    animation:float 4s linear forwards;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) scale(0.5);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh) scale(1.5);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="container">
+
+<h1>🎁 One More Surprise 🎁</h1>
+
+<p>Tap the gift to open it.</p>
+
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<div class="hidden" id="message">
+
+<h2>❤️ Dear Fayrouz ❤️</h2>
+
+<p>
+
+If you've reached this page...
+
+Thank you for taking this little journey with me.
+
+I didn't create this website because I wanted something fancy.
+
+I created it because you are worth my time, effort, and sincerity.
+
+Whether we're laughing, talking, or simply sharing a quiet moment...
+
+Those are the memories I hope we continue to make.
+
+Thank you for being part of this story.
+
+🌹
+
+</p>
+
+</div>
+
+<button class="next" id="nextBtn"
+onclick="location.href='finale.html'">
+
+The Final Chapter ❤️
+
+</button>
+
+</div>
+
+<script>
+
+function openGift(){
+
+document.querySelector(".gift").style.display="none";
+
+document.getElementById("message").style.display="block";
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+for(let i=0;i<120;i++){
+
+const s=document.createElement("div");
+
+s.className="sparkle";
+
+s.innerHTML=Math.random()>0.5?"❤️":"✨";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+
+s.style.animationDuration=(2+Math.random()*3)+"s";
+
+document.body.appendChild(s);
+
+setTimeout(()=>s.remove(),5000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
