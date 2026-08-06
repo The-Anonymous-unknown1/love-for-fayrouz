@@ -146,3 +146,120 @@ It's simply a sincere wish to keep learning about you, laughing with you, and cr
 </div>
 
 `;
+// ===============================
+// LOVE LETTER SECTION
+// ===============================
+
+document.getElementById("letter").innerHTML = `
+
+<div class="love-letter">
+
+<h2>💌 A Letter For You 💌</h2>
+
+<div id="envelope">
+📩
+</div>
+
+<div id="letterContent">
+
+<p id="typedLetter"></p>
+
+<button id="nextGallery">
+Our Dream ❤️
+</button>
+
+</div>
+
+</div>
+
+`;
+
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("typedLetter");
+const nextGallery = document.getElementById("nextGallery");
+
+nextGallery.style.display = "none";
+
+const loveLetter = `
+
+Dear Fayrouz,
+
+If you've reached this part of the website...
+
+thank you.
+
+I wanted to create something different.
+
+Not because expensive gifts matter...
+
+but because time and effort are gifts too.
+
+Every line here comes from a sincere heart.
+
+You deserve kindness.
+
+You deserve respect.
+
+You deserve someone who appreciates your smile,
+your dreams,
+and the amazing person you are.
+
+Whether this becomes the beginning of something beautiful...
+
+or simply a wonderful memory...
+
+I'm grateful that our paths crossed.
+
+Thank you for being you.
+
+❤️
+
+With sincerity,
+
+Al-Ameen Umar
+
+`;
+
+envelope.onclick = () => {
+
+    envelope.style.display = "none";
+
+    document.getElementById("letterContent").style.display = "block";
+
+    let i = 0;
+
+    function typeLetter(){
+
+        if(i < loveLetter.length){
+
+            if(loveLetter[i] === "\n"){
+                letter.innerHTML += "<br>";
+            }else{
+                letter.innerHTML += loveLetter[i];
+            }
+
+            i++;
+
+            setTimeout(typeLetter,30);
+
+        }else{
+
+            nextGallery.style.display = "inline-block";
+
+        }
+
+    }
+
+    typeLetter();
+
+};
+
+nextGallery.onclick = ()=>{
+
+document.getElementById("gallery").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+};
