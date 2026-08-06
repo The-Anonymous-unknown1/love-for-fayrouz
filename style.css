@@ -704,3 +704,35 @@ transform:scale(1.08);
 box-shadow:0 0 35px hotpink;
 
 }
+
+#startExperience{
+
+margin-top:40px;
+
+padding:18px 40px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f91;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 20px hotpink;
+
+}
+
+#startExperience:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 35px hotpink;
+
+}
