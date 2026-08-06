@@ -13,7 +13,7 @@ hero.innerHTML = `
 
 <h3>Made With ❤️</h3>
 
-<h1>For<br>Fayrouz A. Mamman</h1>
+<h1>For<br>Fayrouz .A. Mamman</h1>
 
 <p id="typing"></p>
 
