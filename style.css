@@ -550,3 +550,83 @@ opacity:1;
 from{opacity:0;}
 to{opacity:1;}
 }
+
+/* =========================
+SURPRISE SECTION
+========================= */
+
+#surprise{
+
+padding:120px 20px;
+
+text-align:center;
+
+}
+
+#surprise h1{
+
+font-size:55px;
+
+color:#ff4f91;
+
+}
+
+#surprise p{
+
+font-size:22px;
+
+max-width:900px;
+
+margin:auto;
+
+line-height:2;
+
+}
+
+#surpriseBtn{
+
+margin-top:40px;
+
+padding:20px 45px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:60px;
+
+background:#ff4f91;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+#surpriseBtn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 35px hotpink;
+
+}
+
+#surpriseMessage{
+
+display:none;
+
+margin-top:60px;
+
+padding:40px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+animation:fadeIn 1s;
+
+}
