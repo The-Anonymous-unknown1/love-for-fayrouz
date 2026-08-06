@@ -607,60 +607,127 @@ const noBtn = document.getElementById("noBtn");
 const answer = document.getElementById("answer");
 const buttons = document.getElementById("buttons");
 
-const noReplies = [
-    "🥺 Really?",
-    "😢 Are you sure?",
-    "🙈 Try again...",
-    "😂 Nope!",
-    "❤️ The answer is YES!",
-    "😜 Nice try!",
-    "💖 You can't escape love!",
-    "🌹 Think again..."
+let level = 0;
+
+const funnyReplies = [
+
+"🥺 Are you sure?",
+
+"😢 Think again...",
+
+"🙈 I didn't see that...",
+
+"😂 Wrong answer!",
+
+"❤️ Try YES instead!",
+
+"🌹 You almost clicked it!",
+
+"😜 Nice try!",
+
+"💖 I'm faster than you!",
+
+"🤣 Nope!",
+
+"🥹 Pleaseeeee..."
+
 ];
 
-let yesSize = 1;
+const yesTexts = [
 
-buttons.addEventListener("mousemove", (e) => {
+"YES ❤️",
 
-    const rect = buttons.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
+"YES PLEASE 🥺",
 
-    const dx = e.clientX - (btnRect.left + btnRect.width / 2);
-    const dy = e.clientY - (btnRect.top + btnRect.height / 2);
+"CLICK ME 😍",
 
-    if (Math.sqrt(dx * dx + dy * dy) < 60) {
+"I LOVE YOU ❤️",
 
-        noBtn.style.left =
-            Math.random() * (rect.width - noBtn.offsetWidth) + "px";
+"PRESS ME 💖",
 
-        noBtn.style.top =
-            Math.random() * (rect.height - noBtn.offsetHeight) + "px";
+"YOU KNOW YOU WANT TO 😁",
 
-        yesSize += 0.08;
+"JUST SAY YES 🥰",
 
-        yesBtn.style.transform = `scale(${yesSize})`;
+"😘 ONE MORE CLICK"
 
-        answer.innerHTML =
-            noReplies[Math.floor(Math.random() * noReplies.length)];
-    }
+];
+
+buttons.addEventListener("mousemove",(e)=>{
+
+const rect = buttons.getBoundingClientRect();
+
+const btnRect = noBtn.getBoundingClientRect();
+
+const dx=e.clientX-(btnRect.left+btnRect.width/2);
+
+const dy=e.clientY-(btnRect.top+btnRect.height/2);
+
+const distance=Math.sqrt(dx*dx+dy*dy);
+
+if(distance<70){
+
+const maxX=rect.width-noBtn.offsetWidth;
+
+const maxY=rect.height-noBtn.offsetHeight;
+
+noBtn.style.left=Math.random()*maxX+"px";
+
+noBtn.style.top=Math.random()*maxY+"px";
+
+level++;
+
+yesBtn.style.transform=`scale(${1+level*0.15})`;
+
+if(level<yesTexts.length){
+
+yesBtn.innerHTML=yesTexts[level];
+
+}
+
+answer.innerHTML=funnyReplies[Math.floor(Math.random()*funnyReplies.length)];
+
+}
 
 });
 
-yesBtn.onclick = () => {
+yesBtn.onclick=()=>{
 
-    answer.innerHTML = `
-    <h1>🥰 Awwww ❤️</h1>
+document.body.style.background="linear-gradient(#ff4f91,#ff99cc)";
 
-    <p>
-    You just made me the happiest person today. 🌹<br><br>
+answer.innerHTML=`
 
-    Thank you for saying YES, Fayrouz. ❤️<br>
+<h1 style="font-size:60px;">
 
-    I hope this is just the beginning of our beautiful story.
-    </p>
-    `;
+🥰❤️ YAYYYYY!! ❤️🥰
 
-    heartConfetti();
+</h1>
+
+<h2>
+
+You just made me the happiest person alive!
+
+</h2>
+
+<p>
+
+Thank you, Fayrouz.
+
+This little website was made especially for you.
+
+I hope every smile you had while exploring it was real.
+
+❤️
+
+Love,
+
+<b>Al-Ameen Umar</b>
+
+</p>
+
+`;
+
+heartConfetti();
 
 };
 
