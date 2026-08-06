@@ -408,3 +408,130 @@ cursor:pointer;
 box-shadow:0 0 20px hotpink;
 
 }
+
+/* ===============================
+   HERO SECTION
+=============================== */
+
+.hero-container{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+}
+
+.glass-card{
+
+width:100%;
+max-width:760px;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:0 0 40px rgba(255,0,120,.25);
+
+}
+
+.glass-card h3{
+
+letter-spacing:4px;
+
+font-weight:300;
+
+color:#ffc8dd;
+
+margin-bottom:20px;
+
+}
+
+.glass-card h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:70px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+text-shadow:0 0 20px #ff5aa5;
+
+}
+
+#heroTyping{
+
+font-size:20px;
+
+line-height:1.9;
+
+min-height:150px;
+
+margin-bottom:35px;
+
+}
+
+#beginStory{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff2d75;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+box-shadow:0 0 25px #ff2d75;
+
+transition:.3s;
+
+}
+
+#beginStory:hover{
+
+transform:scale(1.08);
+
+}
+
+@media(max-width:768px){
+
+.glass-card{
+
+padding:30px;
+
+}
+
+.glass-card h1{
+
+font-size:46px;
+
+}
+
+#heroTyping{
+
+font-size:18px;
+
+}
+
+}
