@@ -336,3 +336,75 @@ font-size:18px;
 }
 
 }
+
+/* ===============================
+   LOVE LETTER
+=============================== */
+
+.love-letter{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+#envelope{
+
+font-size:120px;
+
+cursor:pointer;
+
+margin:40px auto;
+
+transition:.4s;
+
+}
+
+#envelope:hover{
+
+transform:scale(1.15);
+
+}
+
+#letterContent{
+
+display:none;
+
+background:rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:25px;
+
+text-align:left;
+
+line-height:2;
+
+font-size:20px;
+
+}
+
+#nextGallery{
+
+margin-top:35px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff2d75;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+box-shadow:0 0 20px hotpink;
+
+}
