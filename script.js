@@ -597,3 +597,59 @@ behavior:"smooth"
 });
 
 };
+// ======================
+// YES / NO GAME
+// ======================
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const box = document.getElementById("buttons");
+const answer = document.getElementById("answer");
+
+const SAFE_DISTANCE = 60;
+
+box.addEventListener("mousemove", (e)=>{
+
+    const rect = box.getBoundingClientRect();
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const btnX = noBtn.offsetLeft + noBtn.offsetWidth/2;
+    const btnY = noBtn.offsetTop + noBtn.offsetHeight/2;
+
+    const dx = mouseX - btnX;
+    const dy = mouseY - btnY;
+
+    const distance = Math.sqrt(dx*dx + dy*dy);
+
+    if(distance < SAFE_DISTANCE){
+
+        const maxX = rect.width - noBtn.offsetWidth;
+        const maxY = rect.height - noBtn.offsetHeight;
+
+        let newX,newY;
+
+        do{
+            newX = Math.random()*maxX;
+            newY = Math.random()*maxY;
+
+        }while(
+            Math.sqrt(
+                Math.pow(mouseX-newX,2)+
+                Math.pow(mouseY-newY,2)
+            ) < SAFE_DISTANCE
+        );
+
+        noBtn.style.left = newX+"px";
+        noBtn.style.top = newY+"px";
+    }
+
+});
+
+yesBtn.onclick = ()=>{
+
+    answer.innerHTML =
+    "❤️ YAY!! You just made Al-Ameen the happiest person alive! ❤️🎉";
+
+};
