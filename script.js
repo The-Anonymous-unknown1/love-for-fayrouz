@@ -292,13 +292,13 @@ Every memory begins with a single moment.
 
 <div class="gallery">
 
-<img src="assets/images/gallery1.jpg">
+<img src="assets/images/Love5.jpg">
 
-<img src="assets/images/gallery2.jpg">
+<img src="assets/images/Love7.jpg">
 
-<img src="assets/images/gallery3.jpg">
+<img src="assets/images/Love2.jpg">
 
-<img src="assets/images/gallery4.jpg">
+<img src="assets/images/Love4.png">
 
 </div>
 
