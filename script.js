@@ -691,6 +691,20 @@ answer.innerHTML=funnyReplies[Math.floor(Math.random()*funnyReplies.length)];
 
 });
 
+function heartConfetti() {
+
+    for (let i = 0; i < 100; i++) {
+
+        setTimeout(() => {
+
+            createHeart();
+
+        }, i * 50);
+
+    }
+
+}
+
 yesBtn.onclick=()=>{
 
 document.body.style.background="linear-gradient(#ff4f91,#ff99cc)";
